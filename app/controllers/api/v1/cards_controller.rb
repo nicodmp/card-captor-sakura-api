@@ -10,7 +10,7 @@ module Api::V1
     def show
       @card  = Card.find(params[:id])
 
-      render json: @post if stale?(last_modified: @post.updated_at, public: true)
+      render json: @card if stale?(last_modified: @card.updated_at, public: true)
     end
   end
 end
